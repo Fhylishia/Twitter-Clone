@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="layout"   
+</body>
+</html>
+
+  <!-- SIDEBAR DESKTOP -->
+  <nav class="sidebar">
+    <h2 class="logo"> X Clone</h2>
+    <button id="navHome" class="nav-btn active">Home</button>
+    <button id="navProfile" class="nav-btn">Profile</button>
+    <button id="navAI" class="nav-btn">Ask AI</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header><h1 id="pageTitle">Home</h1></header>
+
+    <!-- HOME VIEW -->
+    <section id="homeView">
+      <div class="compose">
+        <div class="avatar" id="myAvatar">LG</div>
+        <div class="compose-box">
+          <textarea id="tweetInput" placeholder="What is happening?!" maxlength="280"></textarea>
+          <div class="compose-footer">
+            <span id="charCount">280 left</span>
+            <button id="tweetBtn">Post</button>
+          </div>
+        </div>
+      </div>
+      <div id="loading" class="loading">Loading... <div class="spinner"></div></div>
+      <div id="errorMsg" class="error hidden"></div>
+      <div id="feed"></div>
+    </section>
+
+    <!-- PROFILE VIEW -->
+    <section id="profileView" class="hidden">
+      <div class="cover"></div>
+      <div class="profile-head">
+        <div class="avatar big" id="profileAvatar">LG</div>
+        <button id="followBtn">Follow</button>
+      </div>
+      <h2 id="profileName">Leanne Graham</h2>
+      <p id="profileUsername">@Bret</p>
+      <p id="profileBio">Coffee first, code second. Building small things with JavaScript.</p>
+      <p id="profileMeta">Works at United States | New Zealand</p>
+      <p id="profileStats"><b id="followingCount">224</b> Following &nbsp; <b id="followerCount">2930</b> Followers &nbsp; <b id="postCount">8</b> Posts</p>
+      <h3 id="profilePostsTitle">Posts</h3>
+      <div id="profilePosts"></div>
+    </section>
+  </main>
+
+  <!-- WHO TO FOLLOW -->
+  <aside class="rightbar">
+    <h3>Who to follow</h3>
+    <div id="whoToFollow"></div>
+  </aside>
+
+  <!-- BOTTOM BAR MOBILE -->
+  <nav class="bottombar">
+    <button data-nav="home">Home</button>
+    <button data-nav="profile">Profile</button>
+    <button data-nav="ai">Ask AI</button>
+  </nav>
+</div>
+
+<!-- FLOATING AI BUTTON -->
+<button id="aiFab">AI</button>
+
+<!-- AI PANEL -->
+<div id="aiPanel" class="hidden">
+  <div class="ai-header"><b>Ask AI</b><button id="closeAI">Close</button></div>
+  <div id="chatMessages"></div>
+  <div id="thinking" class="hidden">AI is thinking...</div>
+  <div class="ai-input-row">
+    <input id="aiInput" placeholder="Ask about any post">
+    <button id="sendAI">Send</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

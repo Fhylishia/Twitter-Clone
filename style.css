@@ -1,0 +1,218 @@
+* { box-sizing: border-box;
+     font-family: Arial, sans-serif; }
+body { margin: 0;
+     background: #f8e2e2;
+     }
+.hidden { display: none !important; }
+.layout { display: flex;
+     max-width: 1100px;
+      margin: auto; 
+    }
+.sidebar { width: 200px; 
+    padding: 20px;
+     display: flex;
+      flex-direction: column;
+       gap: 10px;
+        position: sticky;
+         top: 0;
+          height: 100vh;
+         }
+.nav-btn { padding: 12px;
+     border: none;
+      background: none;
+       text-align: left;
+        font-size: 17px;
+         border-radius: 20px;
+          cursor: pointer;
+         }
+.nav-btn.active { font-weight: bold;
+     background: #eef3f8; }
+.main { flex: 1;
+     border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+       min-height: 100vh;
+        padding-bottom: 80px; 
+    }
+.main header { padding: 15px; 
+    border-bottom: 1px solid #ddd;
+     position: sticky;
+      top: 0; background: white;
+     }
+.compose { display: flex; 
+    gap: 10px; 
+    padding: 15px; 
+    border-bottom: 1px solid #ddd;
+ }
+.avatar { width: 45px;
+     height: 45px; 
+     border-radius: 50%;
+      background: #7f5ccf;
+       display: flex;
+        align-items: center;
+         justify-content: center;
+          font-weight: bold;
+           cursor: pointer;
+            flex-shrink: 0;
+         }
+.avatar.big { width: 80px;
+     height: 80px;
+      font-size: 22px; 
+      margin-top: -35px;
+       border: 3px solid rgb(146, 233, 233);
+     }
+.compose-box { flex: 1; }
+textarea { width: 100%;
+     border: none;
+      outline: none;
+       font-size: 18px;
+        resize: none;
+         height: 60px;
+         }
+.compose-footer { display: flex;
+     justify-content: space-between;
+      align-items: center;
+     }
+#tweetBtn, #followBtn, #sendAI { background: #9d45a5;
+     color: rgb(238, 234, 237); 
+     border: none;
+      padding: 8px 18px; 
+      border-radius: 20px;
+       cursor: pointer;
+        font-weight: bold;
+     }
+.post { display: flex;
+     gap: 10px;
+      padding: 15px;
+       border-bottom: 1px solid #e577f3;
+     }
+.post-body { flex: 1; }
+.post-name { cursor: pointer; }
+.post-actions { display: flex;
+     gap: 18px;
+      margin-top: 8px;
+     }
+.post-actions button { background: none; 
+    border: none;
+    color: #47315f;
+     cursor: pointer;
+     }
+.post-actions button.liked { color: rgb(235, 40, 202); 
+    font-weight: bold;
+ }
+.comment { background: #d3e0e0;
+     padding: 8px;
+      border-radius: 10px;
+       margin: 8px 0 8px 0;
+        font-size: 14px; }
+.rightbar { width: 260px;
+     padding: 20px;
+     }
+.follow-card { display: flex;
+     gap: 10px;
+      align-items: center;
+       margin-bottom: 12px;
+        cursor: pointer;
+     }
+.cover { height: 140px;
+     background: #f7cdf7;
+     }
+.profile-head { display: flex;
+     justify-content: space-between;
+      padding: 0 15px;
+       align-items: flex-start;
+     }
+#profileView { padding-bottom: 20px; }
+#profileView h2, #profileView p, #profileView h3 { padding: 0 15px; }
+.spinner { width: 20px;
+    height: 20px;
+     border: 3px solid #ddd;
+      border-top: 3px solid #48a3e0;
+       border-radius: 50%;
+        display: inline-block;
+         animation: spin 1s linear infinite;
+         }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading, .error { padding: 15px; text-align: center; }
+.error { color: red; background: #ffecec; }
+#aiFab { position: fixed;
+     bottom: 90px;
+      right: 20px; 
+      width: 60px; 
+      height: 60px;
+       border-radius: 50%;
+        background: #1987cf;
+         color: white;
+          border: none;
+           font-weight: bold;
+            font-size: 16px;
+             cursor: pointer; 
+             z-index: 100; 
+            }
+#aiPanel { position: fixed;
+     bottom: 20px;
+      right: 20px;
+       width: 360px; 
+       max-width: 92vw;
+        height: 480px;
+         background: white;
+          border: 1px solid #ddd;
+           border-radius: 15px;
+            display: flex;
+             flex-direction: column;
+              overflow: hidden
+              ; z-index: 101;
+               box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+             }
+.ai-header { display: flex; 
+    justify-content: space-between;
+     padding: 12px;
+      border-bottom: 1px solid #ddd;
+     }
+#chatMessages { flex: 1;
+     overflow-y: auto; 
+     padding: 12px;
+      display: flex;
+       flex-direction: column; 
+       gap: 8px;
+     }
+.msg { padding: 10px;
+     border-radius: 12px;
+      max-width: 85%;
+       font-size: 14px;
+     }
+.msg.user { background: #1069a5;
+     color: white;
+      align-self: flex-end;
+     }
+.msg.ai { background: #f0f0f0;
+     align-self: flex-start;
+     }
+.ai-input-row { display: flex;
+     gap: 8px; 
+     padding: 10px; 
+     border-top: 1px solid #ddd;
+     }
+.ai-input-row input { flex: 1; 
+    padding: 10px; 
+    border-radius: 20px;
+     border: 1px solid #ddd;
+     }
+.bottombar { display: none; }
+@media (max-width: 800px) {
+  .sidebar, .rightbar { display: none; }
+  .bottombar { display: flex;
+     justify-content: space-around; 
+     position: fixed;
+      bottom: 0; 
+      left: 0;
+       right: 0; 
+       background: white;
+        border-top: 1px solid #ddd;
+         padding: 12px;
+          z-index: 99; }
+  .bottombar button { background: none;
+     border: none;
+      font-size: 15px;
+     }
+  #aiFab { bottom: 80px; }
+}
